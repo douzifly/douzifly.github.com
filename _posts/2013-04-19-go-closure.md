@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "go 闭包"
+title: "Go 闭包"
 description: ""
 category: Go
 tags: [Language]
