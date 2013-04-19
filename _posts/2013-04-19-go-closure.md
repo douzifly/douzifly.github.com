@@ -17,8 +17,8 @@ import "fmt"
 var sum = 0
 func adder() func(int) int {
 	return func(x int) int {
-				sum += x
-				return sum
+		sum += x
+		return sum
 	}
 }
 
@@ -41,8 +41,8 @@ import "fmt"
 func adder() func(int) int {
 	sum := 0
 	return func(x int) int {
-				sum += x
-				return sum
+		sum += x
+		return sum
 	}
 }
 
@@ -67,18 +67,18 @@ func fibonacci() func() int64 {
 	var index = 1
 	var a, b int64
 	return func()int64{
-			var ret int64
-			switch{
-			case index==1, index ==2:
-				a, b = 1, 1
-				ret = 1
-			default:
-				ret = a + b
-				a = b
-				b = ret
-			}
-			index ++
-			return ret
+		var ret int64
+		switch{
+		case index==1, index ==2:
+			a, b = 1, 1
+			ret = 1
+		default:
+			ret = a + b
+			a = b
+			b = ret
+		}
+		index ++
+		return ret
 	}
 }
 
