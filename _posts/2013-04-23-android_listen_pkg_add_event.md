@@ -9,7 +9,9 @@ tags: [Android]
 
 if **"package"** isn't be add to scheme, you won't receive the broadcast.
 
-> IntentFilter fi = new IntentFilter(Intent.ACTION_PACKAGE_ADDED);
-> fi.addDataScheme("package");
-> ctx.registerReceiver(receiver, fi);
+{% highlight java %}
+IntentFilter fi = new IntentFilter(Intent.ACTION_PACKAGE_ADDED);
+fi.addDataScheme("package");
+ctx.registerReceiver(receiver, fi);
+{% endhighlight %}
 
