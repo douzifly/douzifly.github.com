@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "mysql random select rows"
+title: "mysql random rows"
 description: ""
 category:db 
 tags: [mysql]
