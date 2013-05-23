@@ -1,8 +1,0 @@
----
-layout: post
-title: "migrate androidproject from eclipse to android studio"
-description: ""
-category: 
-tags: []
----
-{% include JB/setup %}
