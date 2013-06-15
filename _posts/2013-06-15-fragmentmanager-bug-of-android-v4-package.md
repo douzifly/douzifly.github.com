@@ -91,7 +91,9 @@ LayoutInflator 在 inflate 的时候，会调用到 FragmentActivity的onCreateV
 {% endhighlight %}
 
 以上是onCreateView的关键代码。可以看到当判断到 mView == null 时便会抛出这个异常。
+
 在onCreateView 中，会首先会根据id和tag 从mFragments中获取到之前的Fragment，如果有就直接返回，如果没有就通过Fragment.instantiate(this, fname)来创建一个。
+
 因为在崩溃的过程中，框架没有回调到xxxFragment的onCreateView，但是却走到了判断 mView == null 的这步，说明在第一次初始化xxxFragment的时候，下面的代码却给fragment赋值了。可是奇怪的时，xxxFragment是第一次创建啊，怎么会已经存在了他的实例呢？
 难道是框架把其他的Fragment实例返回给我了？
 
@@ -119,6 +121,7 @@ View.NO_ID 的值是-1，同事添加的Fragment没有给id，那么其Fragment 
 Fragment fragment = 0 != -1 ? mFragments.findFragmentById(0) : null;
 {% endhighlight %}
 恍然大悟了吧。我inflate我的layout，调用到FragmentActivity的onCreateView的时候，却把同事的另外的Fragment返回给我了。
+
 这是FragmentActivity的bug，他使用了VIEW.NO_ID这个常量去判断，但是默认的Fragment id却是0.
 
 解决办法很简单，在下面这句代码里加一个id就可以了,这样就不会使用默认的id 0 了
