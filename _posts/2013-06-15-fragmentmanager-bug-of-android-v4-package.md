@@ -8,7 +8,9 @@ tags: [Android]
 {% include JB/setup %}
 
 今天跟一个bug花了差不多1个小时左右的时间.
+
 现象是这样的:
+
 同事在主程序中新加了一个模块，只要一运行这个新加的模块，再运行我的模块就会崩溃。如果不运行同时的模块，运行我的模块就不会崩溃。
 堆栈信息：Fragment xxx did not create a view。我的模块会通过LayoutInflator去动态加载一个带fragment标签的界面，但是我的xxxFragment在onCreateView中返回了View啊。通过加Log日志发现，框架根本没有回调到xxxFragment的onCreateView函数里来，这就奇怪了。
 
@@ -119,7 +121,7 @@ Fragment fragment = 0 != -1 ? mFragments.findFragmentById(0) : null;
 恍然大悟了吧。我inflate我的layout，调用到FragmentActivity的onCreateView的时候，却把同事的另外的Fragment返回给我了。
 这是FragmentActivity的bug，他使用了VIEW.NO_ID这个常量去判断，但是默认的Fragment id却是0.
 
-解决办法很简单，在下面这句代码里加一个id就可以了
+解决办法很简单，在下面这句代码里加一个id就可以了,这样就不会使用默认的id 0 了
 
 {% highlight java %}
  mRetainFragment = new RetainFragment();
