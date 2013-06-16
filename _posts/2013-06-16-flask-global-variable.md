@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "在Flash框架中使用全局变量"
+title: "在Flask框架中使用全局变量"
 description: ""
 category: Python 
 tags: [Python]
