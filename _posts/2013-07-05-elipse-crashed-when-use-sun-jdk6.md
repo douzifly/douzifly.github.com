@@ -11,6 +11,6 @@ tags: [eclipse jdk crashed]
 
 在eclipse.ini里加入如下代码即可解决问题
 
-{% highlight %}
--XX:CompileCommand=exclude,org/eclipse/core/internal/dtree/DataTreeNode,forwardDeltaWith
+{% highlight java %}
+	-XX:CompileCommand=exclude,org/eclipse/core/internal/dtree/DataTreeNode,forwardDeltaWith
 {% endhighlight %}
