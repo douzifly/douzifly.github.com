@@ -2,7 +2,7 @@
 layout: post
 title: "fix htc cant recv udp broadcast"
 description: ""
-category:Android 
+category: Android 
 tags: [Android UDP]
 ---
 {% include JB/setup %}
