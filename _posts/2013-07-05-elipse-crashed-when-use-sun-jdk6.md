@@ -14,3 +14,7 @@ tags: [eclipse jdk crashed]
 {% highlight java %}
 	-XX:CompileCommand=exclude,org/eclipse/core/internal/dtree/DataTreeNode,forwardDeltaWith
 {% endhighlight %}
+
+----------------------------------------------------------
+
+其实上面的方法还是不能解决这个问题，使用sun jdk的时候，eclipse常常崩溃，无奈只好使用open jdk, 但是draw9patch依然不能正确运行。解决方案：copy swing-worker.jar into /path_to_android_sdk/tools/lib. That's all!
