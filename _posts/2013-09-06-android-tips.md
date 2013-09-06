@@ -2,7 +2,7 @@
 layout: post
 title: "Android tips"
 description: "Android 开发的一些经验总结"
-category: Android
+category:
 tags: [Android]
 ---
 {% include JB/setup %}
