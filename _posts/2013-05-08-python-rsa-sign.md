@@ -6,6 +6,7 @@ category: python
 tags: [Language]
 ---
 {% include JB/setup %}
+
 {% highlight python %}
 import M2Crypto, base64
 
@@ -28,4 +29,6 @@ def sign(data):
 if __name__ == "__main__":
 	signed = sign("a")
 	print(base64.b64encode(signed))
+
 {% endhighlight %}
+
