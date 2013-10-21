@@ -9,7 +9,7 @@ tags: [Android, Java]
 
 今天在开发Android局域网文件传输的时候，遇到这么一个需求，当客户端向HTTP SVR请求文件时，HTTP SVR应答的数据流来自多个文件。比如，客户端发起a.rmvb文件下载请求,而在服务端上，a.rmvb并不真实存在，而是存在a1.rmvb, a2.rmvb, a3.rmvb 等。
 
-服务器端采用的时开源的简单HTTP Server NanoHttpd, 但是NanoHttpd暴露的接口是一个外界的InputStream对象。 
+服务器端采用的时开源的简单HTTP Server NanoHttpd, 但是NanoHttpd暴露的接口是一个InputStream对象。 
 
 方案一：
 服务器端将文件合并后发送。这样就可以new FileInputStream(mergedFilePath)给NanoHttpd了。
