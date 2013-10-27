@@ -24,3 +24,11 @@ In Xcode 4, the "Symbols" drop-down appears when pressing Control-6. You can cha
     }
 }
 {% endhighlight %}
+
+* handle UIWebView pan gesture
+
+{% highlight objc %}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer;{
+  return YES;
+}
+{% endhighlight %}
