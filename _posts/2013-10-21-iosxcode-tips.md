@@ -32,3 +32,42 @@ In Xcode 4, the "Symbols" drop-down appears when pressing Control-6. You can cha
   return YES;
 }
 {% endhighlight %}
+
+* Change UITextFiled appreance
+
+Import <QuartzCore/QuartzCore.h>
+
+and for changing the border color use the following code snippet (I'm setting it to redColor),
+textField.layer.cornerRadius=8.0f;
+textField.layer.masksToBounds=YES;
+textField.layer.borderColor=[[UIColor redColor]CGColor];
+textField.layer.borderWidth= 1.0f;
+
+* Fix UITextFiled rightViewMode bug
+
+{% highlight objc %}
+- (BOOL)becomeFirstResponder
+{
+    BOOL ret = YES ;
+
+    ret = [super becomeFirstResponder] ;
+
+    if( ret && ( _setupClearButtonMode == UITextFieldViewModeWhileEditing ) )
+        self.rightViewMode = UITextFieldViewModeAlways ;
+
+    return ret ;
+}
+
+- (BOOL)resignFirstResponder
+{
+    BOOL ret = YES ;
+
+    ret = [super resignFirstResponder] ;
+
+    if( ret && ( _setupClearButtonMode == UITextFieldViewModeWhileEditing ) )
+        self.rightViewMode = UITextFieldViewModeWhileEditing ;
+
+    return ret ;
+}
+{% endhighlight %}
+
