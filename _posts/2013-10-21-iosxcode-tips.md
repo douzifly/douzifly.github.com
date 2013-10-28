@@ -35,7 +35,7 @@ In Xcode 4, the "Symbols" drop-down appears when pressing Control-6. You can cha
 
 * Change UITextFiled appreance
 
-Import <QuartzCore/QuartzCore.h>
+Import &lt;QuartzCore/QuartzCore.h&gt;
 
 and for changing the border color use the following code snippet (I'm setting it to redColor),
 textField.layer.cornerRadius=8.0f;
