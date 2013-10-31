@@ -24,8 +24,20 @@ tags: [Android, Java]
 直接上代码：
 {% highlight java %}
 /**
+ * Author:Xiaoyuan
+ * Date: Oct 21, 2013
+ * 深圳快播科技
+ */
+package com.qvod.tuitui.network;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+import android.util.Log;
+
+/**
  * 
- * 合并多个InputStream
+ * 
  * @author Xiaoyuan
  *
  */
@@ -57,6 +69,16 @@ public class MultiInputStream extends InputStream{
 		return mAvai;
 	}
 	
+	private void close(int index) {
+		Log.d(TAG, "close index:" + index);
+		try {
+			mStreams[index].close();
+		} catch(Exception e) {
+			Log.e(TAG, "close exp:" + e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public int read() throws IOException {
 		int value = -1;
@@ -67,12 +89,14 @@ public class MultiInputStream extends InputStream{
 			Log.d(TAG, "read -1, check next");
 			// check have next stream
 			if(mReadStreamIndex < mStreams.length) {
+				close(mReadStreamIndex);
 				mReadStreamIndex++;
 				Log.d(TAG, "read next :" + mReadStreamIndex);
 				// read next byte from next stream
 				return read();
 			}
 		}
+//		Log.d(TAG, "read return:" + value + " stream index:" + mReadStreamIndex);
 		return value;
 	}
 	
@@ -86,12 +110,15 @@ public class MultiInputStream extends InputStream{
 			Log.d(TAG, "read -1, check next");
 			// check have next stream
 			if(mReadStreamIndex < mStreams.length) {
+				close(mReadStreamIndex);
 				mReadStreamIndex++;
+				s = mStreams[mReadStreamIndex];
 				Log.d(TAG, "read next :" + mReadStreamIndex);
 				// read next byte from next stream
-				return read();
+				return s.read(buffer, offset, length);
 			}
 		}
+//		Log.d(TAG, "read return:" + value + " stream index:" + mReadStreamIndex);
 		return readCount;
 	}
 	
@@ -100,7 +127,11 @@ public class MultiInputStream extends InputStream{
 		Log.d(TAG, "reset");
 		mReadStreamIndex = 0;
 		for(int i = 0; i < mStreams.length; i++) {
-			mStreams[i].reset();
+			try {
+				mStreams[i].reset();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -108,7 +139,11 @@ public class MultiInputStream extends InputStream{
 	public void close() throws IOException {
 		Log.d(TAG, "close");
 		for(int i = 0; i < mStreams.length; i++) {
-			mStreams[i].close();
+			try {
+				mStreams[i].close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
