@@ -24,6 +24,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
+  color: #808080;
 }
 
 h1 {
@@ -60,14 +61,17 @@ table {
 /*
 /*****************************************************************************/
 
+li.posts {
+  color:#E6E6FA;
+}
+
 ul.posts {
   list-style-type: square;
   color:#E6E6FA;
-  margin-bottom: 0.75m;
 }
 
 ul.posts li {
-    line-height: 0.75em;
+/*    line-height: 0.75em; */
 }
 
 ul.posts span {
