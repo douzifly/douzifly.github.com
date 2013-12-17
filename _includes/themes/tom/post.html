@@ -1,11 +1,21 @@
 <div id="post">
-  <h1>{{ page.title }}</h1>
-  <p class="meta">
+  <h1 class="entry-header">{{ page.title }}</h1>
+  <span class="entry-date">
     {{ page.date | date_to_long_string }} 
     {% if page.location %}{{ page.location }}{% endif %}
-  </p>
-  {{ content }}
+</span>
+<p>
+	{{ content }}
+	</p>
 </div>
+	{% if page.previous.url %} 
+	 
+   	 <div id="nextpost">
+		 <h2>&rArr;</h2>
+    		 <a href="{{page.previous.url}}" title="next Post: 
+		 	{{page.previous.title}}">{{page.previous.title}}</a> 
+	</div>
+ {% endif %}
 
 <div id="related">
   <h2>Related Posts</h2>
@@ -15,5 +25,4 @@
     {% endfor %}
   </ul>
 </div>
-
 {% include JB/comments %}

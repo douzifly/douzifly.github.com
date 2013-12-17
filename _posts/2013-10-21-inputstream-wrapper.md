@@ -26,7 +26,6 @@ tags: [Android, Java]
 /**
  * Author:Xiaoyuan
  * Date: Oct 21, 2013
- * 深圳快播科技
  */
 package com.qvod.tuitui.network;
 
@@ -35,12 +34,6 @@ import java.io.InputStream;
 
 import android.util.Log;
 
-/**
- * 
- * 
- * @author Xiaoyuan
- *
- */
 public class MultiInputStream extends InputStream{
 	
 	final static String TAG = "MulitInputStream";
