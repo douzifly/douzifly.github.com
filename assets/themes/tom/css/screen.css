@@ -17,8 +17,7 @@ html, body {
 
 body {
   background-color: white;
-  font: 13.34px helvetica, arial, clean, sans-serif;
-  *font-size: small;
+  font: 14px "SimSun", "Palatino Linotype", "Book Antiqua", Palatino, serif;
   text-align: center;
 }
 
@@ -33,19 +32,20 @@ p {
 }
 
 a {
-  color: #808080;
   text-decoration:none;
+  color:#666;
+}
+
+a:visited {
+  text-decoration:none;
+  color:#666;
 }
 
 a:hover {
   color: black;
-  text-decoration:none;
+  text-decoration:underline;
 }
 
-a:visited {
-  color: ##696969;
-  text-decoration:none;
-}
 
 table {
   font-size: inherit;
@@ -59,22 +59,9 @@ table {
 /*****************************************************************************/
 
 li.posts {
-  color:#E6E6FA;
-}
-
-ul.posts {
-  list-style-type: square;
-  color:#E6E6FA;
-}
-
-ul.posts li {
-/*    line-height: 0.75em; */
-}
-
-ul.posts span {
-    color: #aaa;
-    font-family: Monaco, "Courier New", monospace;
-    font-size: 80%;
+  line-height: 2.5em;
+  color:#666;
+  font-size:18px;
 }
 
 /*****************************************************************************/
@@ -84,7 +71,7 @@ ul.posts span {
 /*****************************************************************************/
 
 .site {
-  font-size: 110%;
+  font-size: 16px;
   text-align: justify;
   width: 60em;
   margin: 3em auto 2em auto;
@@ -94,16 +81,17 @@ ul.posts span {
 .title {
   color: #800;
   font-weight: bold;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
+  font-size:22px;
 }
-
-  .site .title a {
+  
+.site .title a {
     color: #a00;
     text-decoration: none;
-  }
+}
 
   .site .title a:hover {
-    color: black;
+    color: #a00;
   }
 
   .site .title a.extra {
@@ -131,6 +119,11 @@ ul.posts span {
     border-top: 4px solid #eee;
     margin-top: 2em;
     overflow: hidden;
+  }
+
+  .split{
+    border-top:4px solid #eee;
+    margin-bottom:2em;
   }
 
     .site .footer .contact {
