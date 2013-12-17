@@ -64,6 +64,10 @@ li.posts {
   font-size:18px;
 }
 
+.post-list{
+  margin-top:2em;
+}
+
 /*****************************************************************************/
 /*
 /* Site
@@ -123,7 +127,6 @@ li.posts {
 
   .split{
     border-top:4px solid #eee;
-    margin-bottom:2em;
   }
 
     .site .footer .contact {
