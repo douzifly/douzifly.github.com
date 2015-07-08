@@ -7,7 +7,7 @@ tags: [Android, Kotlin]
 ---
 {% include JB/setup %}
 
-Kotlin(http://kotlinlang.org/)简介 ， 其语法来自： Swift， C#， Go？
+[Kotlin](http://kotlinlang.org/)简介 ， 其语法来自： Swift， C#， Go？
 
 优点：
 
@@ -49,7 +49,7 @@ fun searchApps(callback: (AppInfo?) -> Unit) {
 
 异步请求应用信息，并转换为AppInfo对象
 
-网络请求封装了AsyncHttpClient/async-http-client · GitHub(https://github.com/AsyncHttpClient/async-http-client)， Json转换封装了 alibaba/fastjson · GitHub(https://github.com/alibaba/fastjson) （为了简约起见，忽略了其他逻辑，下同）
+网络请求封装了[AsyncHttpClient/async-http-client · GitHub](https://github.com/AsyncHttpClient/async-http-client)， Json转换封装了 [alibaba/fastjson · GitHub](https://github.com/alibaba/fastjson) （为了简约起见，忽略了其他逻辑，下同）
 
 2， 为 Activity 和 Fragment 增加了异步操作扩展
 
