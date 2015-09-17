@@ -90,12 +90,12 @@ li.posts {
 }
 
 .site .title a {
-    color: #a00;
+    color: #303f9f;
     text-decoration: none;
 }
 
   .site .title a:hover {
-    color: #a00;
+    color: #303f9f;
   }
 
   .site .title a.extra {
