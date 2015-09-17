@@ -17,7 +17,7 @@ html, body {
 
 body {
   background-color: white;
-  font: 14px "SimSun", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font: 14px "Menlo", "Consolas", "Book Antiqua", Palatino, serif;
   text-align: center;
 }
 
@@ -88,7 +88,7 @@ li.posts {
   margin-bottom: 1.5em;
   font-size:22px;
 }
-  
+
 .site .title a {
     color: #a00;
     text-decoration: none;
@@ -218,4 +218,3 @@ li.posts {
    color: #666;
    font-size: 18px;
 }
-
